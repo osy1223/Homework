@@ -24,4 +24,11 @@ kosdaq = kosdaq.iloc[39:659]
 print(kosdaq)
 # [620 rows x 3 columns]
 
+# numpy 파일로 변경 후 저장
+kosdaq = kosdaq.to_numpy()
+print(type(kosdaq))
+# <class 'numpy.ndarray'>
 
+np.save('./data/kosdaq.npy', arr=kosdaq)
+print(kosdaq)
+print(kosdaq.shape) # (620, 3)
