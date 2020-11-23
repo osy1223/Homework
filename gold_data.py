@@ -3,7 +3,7 @@ import pandas as pd
 from pandas import DataFrame
 
 # csv 파일 불러오기 (인코딩 주의)
-gold = pd.read_csv('./data/금현물.csv',
+gold = pd.read_csv('./data/csv/금현물.csv',
             header=0, index_col=0, sep=',', encoding='cp949')
 
 print('gold:',gold)
@@ -31,3 +31,12 @@ for i in range(len(gold.index)):
     for j in range(len(gold.iloc[i])):
         gold.iloc[i,j] = int(gold.iloc[i,j].replace(',',''))
 print(gold)
+
+# numpy 파일로 변경 후 저장
+gold = gold.to_numpy()
+print(type(gold))
+# <class 'numpy.ndarray'>
+
+np.save('./data/gold.npy', arr=gold)
+print(gold)
+print(gold.shape) # (620, 6)
