@@ -74,14 +74,6 @@ print(gold_y.shape)
 print(kosdaq_x.shape)
 print(kosdaq_y.shape)
 
-
-
-
-
-
-
-
-
 # 예측값
 bit_predict=bit_x[-1]
 print(bit_predict)
@@ -209,7 +201,7 @@ samsung_pred = model.predict([samsung_predict, bit_predict, gold_predict, kosdaq
 print('samsung_stock_predict:', samsung_pred)
 
 '''
-loss: 30759610.0
-mse: 30759610.0
-samsung_stock_predict: [[68512.805]]
+loss: 36733308.0
+mse: 36733308.0
+samsung_stock_predict: [[52690.836]]
 '''
